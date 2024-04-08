@@ -1,10 +1,10 @@
 from flask_restx import Resource, Namespace
 from datetime import datetime
 
-ping_ns = Namespace("Ping")
+server_ns = Namespace("Server")
 
 
-@ping_ns.route("/ping")
+@server_ns.route("/ping")
 class Ping(Resource):
     def get(self):
         try:
@@ -16,7 +16,7 @@ class Ping(Resource):
             return {"status": "error", "message": str(e)}, 500
 
 
-@ping_ns.route("/time")
+@server_ns.route("/time")
 class Time(Resource):
     def get(self):
         try:
