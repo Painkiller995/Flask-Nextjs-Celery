@@ -67,4 +67,6 @@ class AxiosRequest {
   }
 }
 
-export default new AxiosRequest("http://127.0.0.1:5000");
+const apiUrl = process.env.API_URL || "localhost";
+const axiosInstance = new AxiosRequest(apiUrl);
+export default axiosInstance;
